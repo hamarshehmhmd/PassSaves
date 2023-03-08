@@ -1,16 +1,31 @@
-# PassSaves
+# Username and Password Hashing
 
-This implementation uses the argon2Hash function from the crypto module to hash the password using the Argon2 algorithm, which is considered to be more secure than PBKDF2. The program also generates a random salt and stores it along with the hash in the file.
+This is a simple Node.js script that prompts the user for their username and password, generates a random salt, and hashes the password using the Argon2 algorithm. The username, salt, and hashed password are then saved to a file in JSON format.
 
-It is important to handle any errors that may occur when reading or writing to the file. You can do this by wrapping the fs.writeFileSync function in a try-catch block:
-try {
-  fs.writeFileSync("credentials.txt", JSON.stringify(data));
-  console.log("Username and password saved to credentials.txt");
-} catch (error) {
-  console.error("Error writing to file:", error);
-}
+## Prerequisites
 
-(Code is already added inside the file)
+- Node.js v10 or higher
+- NPM (Node Package Manager)
 
+## Installation
 
-This will catch any errors that occur when writing to the file and log them to the console.
+1. Clone the repository to your local machine.
+2. Install the required dependencies by running `npm install` in the command line.
+
+## Usage
+
+1. Navigate to the project directory in the command line.
+2. Run `node index.js`.
+3. Enter your username and password when prompted.
+4. The program will generate a random salt and use the Argon2 algorithm to hash the password.
+5. The username, salt, and hashed password will be saved to a file called `credentials.txt`.
+
+## Files
+
+- `index.js`: Contains the code for prompting the user for their username and password, generating a random salt, hashing the password, and saving the data to a file.
+- `package.json`: Contains information about the project and its dependencies.
+- `README.md`: This file.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
